@@ -1,0 +1,17 @@
+set sel1 [atomselect top "serial 5535 5536 5537 5540 5541"]
+set outfile [open "COM.xyz" w ]
+set dummy1 "A"
+for {set i 0} {$i < 45} {incr i} {
+set center1 [measure center $sel1 weight mass]
+
+$sel1 frame $i 
+#puts $outfile "$dummy"
+#puts $outfile 
+puts $outfile "$dummy1 $center1"
+
+}
+
+close $outfile
+
+#At the top of the ".xyz" file in the first line write total number of Atoms.
+#In second line keep it blank.
